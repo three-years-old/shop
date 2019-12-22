@@ -7,13 +7,12 @@ Mock.mock('http://www.a123.com/list', {
             'name': '@first @last',
             'id': '@integer(1000,999999)',
             'data': 'datatime',
-            'img': '@image(200*200)',
+            'img': '@image(200*200)', 
             'text': '@sentence(6,22)'
         }
     ]
 })
 let Random = Mock.Random;
-
 let productData = req => {
     let productList = [];//存放农机信息的数组
     for (let i = 0; i < 100; i++) {
@@ -27,4 +26,5 @@ let productData = req => {
     }
     return productList;
 }
+
 Mock.mock('http://www.a123.com/getVarietyItem', productData);
